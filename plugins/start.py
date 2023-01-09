@@ -73,7 +73,7 @@ async def start_command(client: Client, message: Message):
             if DISABLE_CHANNEL_BUTTON:
                 reply_markup = msg.reply_markup
             else:
-                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('Updates', url='https://t.me/rkrishnaa'), InlineKeyboardButton('Close', callback_data='close_data')]])
+                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('Updates', url='https://t.me/RkrishnaDj'), InlineKeyboardButton("Close", callback_data="close")]])
 
             try:
                 await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
