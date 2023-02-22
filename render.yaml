@@ -16,7 +16,7 @@ services:
         sync: false
       - key: CHANNEL_ID 
         sync: false
-      - key: DB_URI
+      - key: DATABASE_URL
         sync: false
       - key: ADMINS 
         sync: false   
