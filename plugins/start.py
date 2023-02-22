@@ -76,11 +76,16 @@ async def start_command(client: Client, message: Message):
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('Updates', url='https://t.me/RkrishnaDj'), InlineKeyboardButton("Close", callback_data="close")]])
 
             try:
-                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
-                await asyncio.sleep(0.5)
+                f = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                await asyncio.sleep(86400)
+                await f.delete()
+                await message.delete()
             except FloodWait as e:
                 await asyncio.sleep(e.x)
-                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                g = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                await asyncio.sleep(86400)
+                await g.delete()
+                await message.delete()
             except:
                 pass
         return
